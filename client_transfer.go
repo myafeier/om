@@ -45,7 +45,7 @@ func (self *Client) TransferFromExtToExt(FromExtId, ToExtId string) (code int, r
 //分机呼外部电话
 //该API用于让分机向外部电话发起呼叫，从而使两者能够建立通话。
 //注：分机呼分机请勿使用该API。
-func (self *Client) TransferFromExtToOuter(fromExtId string, toOuterPhone string) (result *Response, err error) {
+func (self *Client) TransferFromExtToOuter(fromExtId string, toOuterPhone string) (code int, result *Response, err error) {
 
 	queryString := `<?xml version="1.0" encoding="utf-8" ?>
 		<Transfer attribute="Connect">
