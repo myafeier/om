@@ -13,7 +13,7 @@ var logError *oLog.Logger = oLog.New(os.Stdout, "[OM Handler Error] ", oLog.Ldat
 
 //对OM的请求进行处理
 func OmServiceHandler(next http.Handler) http.Handler {
-	return http.HandlerFunc(func(req *http.Request, w http.ResponseWriter) {
+	return http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
 		request, err := ioutil.ReadAll(req.Body)
 		if err != nil {
 			logError.Println(err)
