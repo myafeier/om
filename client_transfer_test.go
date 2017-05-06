@@ -5,7 +5,7 @@ import (
 )
 
 func TestTransferFromExtToExt(t *testing.T) {
-	c, err := NewOmClient()
+	c, err := NewOmClient(OMIp, OMPort, OM_URI)
 	if err != nil {
 		t.Error(err)
 	}
@@ -13,7 +13,7 @@ func TestTransferFromExtToExt(t *testing.T) {
 }
 
 func TestTransferFromExtToOuter(t *testing.T) {
-	c, err := NewOmClient()
+	c, err := NewOmClient(OMIp, OMPort, OM_URI)
 	if err != nil {
 		t.Error(err)
 	}

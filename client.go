@@ -26,12 +26,12 @@ type Client struct {
 	sync.RWMutex
 }
 
-func NewOmClient() (httpClient *Client, err error) {
+func NewOmClient(ip, port, uri string) (httpClient *Client, err error) {
 
 	httpClient = &Client{
-		Ip:     OMIp,
-		Port:   OMPort,
-		Prefix: OM_URI,
+		Ip:     ip,
+		Port:   port,
+		Prefix: uri,
 	}
 	httpClient.debug = log.New(os.Stdout, "[OM Debug] ", log.Lshortfile|log.Ltime)
 	httpClient.error = log.New(os.Stdout, "[OM Error] ", log.Lshortfile|log.Ltime)
