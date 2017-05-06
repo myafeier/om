@@ -45,7 +45,6 @@ func OmMacaronHandler(ctx *macaron.Context) {
 		ctx.Status(400)
 		return
 	}
-	logDebug.Println("Request:", string(request))
 	reqBody := new(Event)
 	err = xml.Unmarshal(request, reqBody)
 	if err != nil {
@@ -53,7 +52,6 @@ func OmMacaronHandler(ctx *macaron.Context) {
 		ctx.Status(400)
 		return
 	}
-	logDebug.Println("xml:", *reqBody)
 	ctx.Data["omEvent"] = reqBody
 
 }
