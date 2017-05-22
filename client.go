@@ -41,7 +41,7 @@ func NewOmClient(ip, port, uri string) (httpClient *Client, err error) {
 func (self *Client) Conn() (err error) {
 	self.Lock()
 	defer self.Unlock()
-	tcpAddr, err := net.ResolveTCPAddr("tcp4", OMIp+":"+OMPort)
+	tcpAddr, err := net.ResolveTCPAddr("tcp4", self.Ip+":"+self.Port)
 	if err != nil {
 		self.error.Println("address:", err)
 		return
